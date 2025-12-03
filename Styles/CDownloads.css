@@ -1,0 +1,433 @@
+/* CSS for Old Downloads Page / CSS para a Página de Downloads Antiga */
+/* Inherits from MainMenu.css and Downloads.css / Herda de MainMenu.css e Downloads.css */
+/* CSS Variables / Variáveis CSS */
+:root {
+    --glass-bg: rgba(40, 40, 40, 0.08);
+    --glass-border: rgba(100, 200, 100, 0.18);
+    --glass-shadow: rgba(0, 0, 0, 0.3);
+    --primary-bg: #1a1a1a;
+    --gradient-1: #0d2618;
+    --gradient-2: #1a2a1a;
+    --gradient-3: #0f2d0f;
+    --text-primary: #e0e0e0;
+    --text-secondary: rgba(200, 200, 200, 0.7);
+    --text-tertiary: rgba(180, 180, 180, 0.5);
+    --accent-primary: #4CAF50;
+    --accent-green: #66BB6A;
+    --accent-green-bright: #81C784;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 6px;
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --blur-amount: 10px;
+    --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700
+}
+
+/* Global Reset / Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    font-size: clamp(14px, 1vw, 16px)
+}
+
+/* Animated Background / Fundo Animado */
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 20% 30%, var(--gradient-1) 0%, transparent 50%), radial-gradient(circle at 80% 70%, var(--gradient-2) 0%, transparent 50%), radial-gradient(circle at 50% 50%, var(--gradient-3) 0%, transparent 50%);
+    animation: gradientShift 20s ease infinite
+}
+
+/* Background Images / Imagens de Fundo */
+.bg-full {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0
+}
+
+/* Background Animations / Animações de Fundo */
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast)
+}
+
+/* Glassmorphism-Acrylic Effect / Efeito Glassmorfismo-Acrylic */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease;
+    will-change: transform
+}
+
+.glass:hover {
+    transition: transform 0.1s ease-out !important
+}
+
+.navbar,
+.footer {
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease;
+    will-change: transform
+}
+
+.container {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg)
+}
+
+/* Navigation / Navegação */
+.navbar {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    position: sticky;
+    top: var(--spacing-md);
+    transform-style: preserve-3d;
+    z-index: 100
+}
+
+.navbar .logo {
+    height: 45px;
+    width: auto
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap
+}
+
+.navbar a {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-weight: var(--font-weight-medium);
+    font-size: 0.9375rem;
+    transition: var(--transition-fast);
+    color: var(--text-secondary)
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary)
+}
+
+.navbar a.active {
+    background: rgba(76, 175, 80, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    color: var(--text-primary);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4)
+}
+
+.content {
+    padding: var(--spacing-xl) 0
+}
+
+/* Footer / Rodapé */
+.footer {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-xl) 0 var(--spacing-lg)
+}
+
+.footer p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm)
+}
+
+.version-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+    margin-top: var(--spacing-md)
+}
+
+/* Page Specific Styles / Estilos Específicos da Página */
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 18px
+}
+
+.card {
+    background-color: rgba(40, 40, 40, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 260px;
+    transition: transform 0.14s ease, box-shadow 0.14s ease
+}
+
+.card:hover {
+    transform: translatey(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-green)
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    max-height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block
+}
+
+.card h3 {
+    margin: 10px 0 6px;
+    font-size: 16px;
+    text-align: center;
+    color: var(--text-primary)
+}
+
+.card .meta {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-bottom: 8px;
+    text-align: center
+}
+
+.versions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%
+}
+
+/* Acrylic Download Buttons with Green Border / Botões de Download Acrílicos com Borda Verde */
+.card .version-wz,
+.card .version-mw3,
+.card .version-bo2 {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    background: rgba(40, 40, 40, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 200, 100, 0.25);
+    color: var(--text-primary)
+}
+
+.card .version-wz:hover,
+.card .version-mw3:hover,
+.card .version-bo2:hover {
+    background: rgba(76, 175, 80, 0.15);
+    border-color: rgba(100, 200, 100, 0.5);
+    transform: translatey(-2px);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3)
+}
+
+/* Unavailable/Coming Soon - Dimmed acrylic / Indisponível/Em Breve - Acrílico esmaecido */
+.card .version-un,
+.card .version-un2 {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: var(--font-weight-medium);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    background: rgba(40, 40, 40, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    color: var(--text-tertiary);
+    cursor: not-allowed;
+    opacity: 0.6
+}
+
+.card .version-un:hover,
+.card .version-un2:hover {
+    transform: none;
+    box-shadow: none
+}
+
+.download-section {
+    margin-bottom: 40px
+}
+
+.download-article p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin: 30px 0 20px 0;
+    font-size: 1rem;
+    padding: 0;
+}
+
+/* Download Section Separator / Separador de Seção de Download */
+.download-article {
+    border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.download-article:last-child {
+    border-bottom: none;
+}
+
+.atencion {
+    color: rgba(255, 91, 91, 0.8);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px
+}
+
+/* Responsive Design / Design Responsivo */
+@media (max-width: 768px) {
+    .download-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px
+    }
+
+    .card h3 {
+        font-size: 14px
+    }
+
+    .card .version,
+    .card .version-wz,
+    .card .version-mwii,
+    .card .version-mw3,
+    .card .version-bo2,
+    .card .version-hot,
+    .card .version-mwiii,
+    .card .version-vg,
+    .card .version-cw,
+    .card .version-h2,
+    .card .version-mw,
+    .card .version-bs,
+    .card .version-un,
+    .card .version-un2 {
+        font-size: 13px;
+        padding: 8px 12px
+    }
+}
+
+@media (max-width: 480px) {
+    .download-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.bg-left {
+    position: fixed;
+    top: 0;
+    left: 10%;
+    height: 100%;
+    width: auto;
+    width: auto;
+    object-fit: cover;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateX(-50%);
+}
+
+.bg-center {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateX(-50%);
+}
+
+.bg-right {
+    position: fixed;
+    top: 0;
+    right: 10%;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateX(50%);
+}

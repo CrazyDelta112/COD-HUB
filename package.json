@@ -1,0 +1,19 @@
+{
+  "name": "CodHub",
+  "productName": "CodHub",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "usuario",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "parcel-bundler": "1.12.5",
+    "rimraf": "6.1.2"
+  },
+  "devDependencies": {
+    "electron": "39.0.0"
+  }
+}

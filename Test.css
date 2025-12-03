@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap");
+.wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 4rem 0 0
+    }
+.logo {
+    display: block;
+    filter: invert(1);
+    margin: 0 0 2rem 0;
+    opacity: 0.5;
+    width: 60px
+    }
+h2.title {
+    font-weight: 400;
+    margin: 0
+    }
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.2rem 0 0
+    }
+.details p {
+    margin: 0
+    }
+.progress {
+    background: #226AB6;
+    border: 1px solid white;
+    height: 15px;
+    margin: 2rem 0 0;
+    position: relative;
+    width: 100%
+    }
+.progress:before {
+    animation: progress-bar-shine 2.5s infinite;
+    background: linear-gradient(to left, white 0%, transparent 100%);
+    border-radius: 10px;
+    content: "";
+    filter: blur(8px);
+    height: 100%;
+    opacity: 0.8;
+    position: absolute;
+    transform: translatex(0);
+    width: 50px
+    }
+.inner-progress {
+    background: white;
+    height: 100%;
+    opacity: 0.6;
+    width: 450px
+    }
+@keyframes progress-bar-shine {
+    to {
+        transform: translateX(450px);
+        opacity: 0;
+        }
+    }

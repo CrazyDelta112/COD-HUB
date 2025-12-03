@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="Images/S1Favicon.png">
+	<title>Cod-Hub | REDACTED</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Cod-Hub is a Call of Duty community website focused on distributing help and recent Call of Duty builds (We are not affiliated with Activision).">
+	<!-- Link to the specific CSS for this page / Link para o CSS específico desta página -->
+	<link rel="stylesheet" href="Styles/Redacted.css">
+	<script src="bg-randomizer.js"></script>
+</head>
+
+<body>
+	<!-- Randomized Background / Plano de fundo aleatório -->
+	<div class="background-blur">
+		<img src="img/asjsa.png" alt="" class="bg-full">
+		<img src="Images/jup_ui_sp_operator_dam.png" alt="" class="bg-left">
+		<img src="Images/jup_ui_sp_operator_london.png" alt="" class="bg-center">
+		<img src="Images/jup_ui_sp_operator_skyhook.png" alt="" class="bg-right">
+	</div>
+
+	<div class="container">
+		<!-- Navigation Bar / Barra de Navegação -->
+		<nav class="navbar glass">
+			<a class="brand" href="index.html">
+				<img src="img/S1Logo.png" alt="Cod-Hub Logo" class="logo">
+			</a>
+			<ul>
+				<li><a href="MainMenu.html">Home</a></li>
+				<li><a href="Downloads.html">Downloads</a></li>
+				<li><a href="infos.html">Infos</a></li>
+				<li><a class="active" href="redacted.html">REDACTED</a></li>
+				<li><a href="DC-Servers.html">DC-Servers</a></li>
+				<li><a href="ChangeLog.html">ChangeLog</a></li>
+				<li><a href="OtherStuff.html">More..</a></li>
+			</ul>
+		</nav>
+
+		<main class="content">
+			<h1
+				style="color: rgb(255, 43, 43); text-align: center; margin-bottom: 20px; font-family: 'Courier New', Courier, monospace; letter-spacing: 5px;">
+				REDACTED</h1>
+
+
+
+				
+			<div class="glass"
+				style="padding: 40px; border-radius: 10px; text-align: center; min-height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+				<h2 style="color: rgb(255, 43, 43); font-family: 'Courier New', Courier, monospace;">TOP SECRET</h2>
+				<p style="color: var(--text-secondary); margin-top: 20px;">This content is currently unavailable.</p>
+				<p style="color: var(--text-tertiary); font-size: 0.8rem; margin-top: 10px;">CLASSIFIED // LEVEL 5
+					CLEARANCE REQUIRED</p>
+			</div>
+
+			<!-- Footer / Rodapé -->
+			<footer class="footer glass">
+				<p>Website made by delta. Thanks uncrash and Jhonatan for the ideas.</p>
+				<div class="version-info">
+					<span>Version: 1.8.0</span>
+					<span>||</span>
+					<span>Cortex Public Version Release</span>
+				</div>
+			</footer>
+		</main>
+	</div>
+
+	<script>
+		// Mouse tilt effect / Efeito de inclinação com mouse
+		document.querySelectorAll('.glass').forEach(el => {
+			let isHovering = false;
+			let animationFrame = null;
+			let animationCompleted = false;
+
+			el.addEventListener('animationend', () => {
+				animationCompleted = true;
+			});
+
+			el.addEventListener('mouseenter', () => {
+				isHovering = true;
+				el.classList.add('hover-active');
+			});
+
+			el.addEventListener('mousemove', e => {
+				if (!isHovering) return;
+
+				if (animationFrame) {
+					cancelAnimationFrame(animationFrame);
+				}
+
+				animationFrame = requestAnimationFrame(() => {
+					const rect = el.getBoundingClientRect();
+					const x = e.clientX - rect.left;
+					const y = e.clientY - rect.top;
+					const centerX = rect.width / 2;
+					const centerY = rect.height / 2;
+
+					const xRatio = Math.max(-0.8, Math.min(0.8, (x - centerX) / centerX));
+					const yRatio = Math.max(-0.8, Math.min(0.8, (y - centerY) / centerY));
+
+					const rotateX = -yRatio * 3;
+					const rotateY = xRatio * 3;
+
+					el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+				});
+			});
+
+			el.addEventListener('mouseleave', () => {
+				isHovering = false;
+				if (animationFrame) {
+					cancelAnimationFrame(animationFrame);
+				}
+				el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+			});
+		});
+	</script>
+</body>
+
+</html>

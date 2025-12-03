@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="images/S1Favicon.png">
+	<title>Cod-Hub | Credits</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Cod-Hub is a Call of Duty community website focused on distributing help and recent Call of Duty builds (We are not affiliated with Activision).">
+	<!-- Link to the specific CSS for this page / Link para o CSS específico desta página -->
+	<link rel="stylesheet" href="Styles/Credits.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<script src="bg-randomizer.js"></script>
+</head>
+
+<body>
+	<!-- Randomized Background / Plano de fundo aleatório -->
+	<div class="background-blur">
+		<img src="img/asjsa.png" alt="" class="bg-full">
+		<img src="Images/jup_ui_sp_operator_dam.png" alt="" class="bg-left">
+		<img src="Images/jup_ui_sp_operator_london.png" alt="" class="bg-center">
+		<img src="Images/jup_ui_sp_operator_skyhook.png" alt="" class="bg-right">
+	</div>
+
+	<div class="container">
+		<!-- Navigation Bar / Barra de Navegação -->
+		<nav class="navbar glass">
+			<a class="brand" href="index.html">
+				<img src="img/S1Logo.png" alt="Cod-Hub Logo" class="logo">
+			</a>
+			<ul>
+				<li><a href="MainMenu.html">Home</a></li>
+				<li><a href="Downloads.html">Downloads</a></li>
+				<li><a href="infos.html">Infos</a></li>
+				<li><a href="redacted.html">REDACTED</a></li>
+				<li><a href="DC-Servers.html">DC-Servers</a></li>
+				<li><a href="ChangeLog.html">ChangeLog</a></li>
+				<li><a class="active" href="OtherStuff.html">More..</a></li>
+			</ul>
+		</nav>
+
+		<main class="content">
+			<div class="credits-container">
+				<h1 class="credits-title">Meet Our Team</h1>
+
+				<section class="credits-section">
+					<h2><i class="fas fa-code"></i> Project Leader</h2>
+					<div class="creator-card">
+						<div class="profile-img">
+							<img src="img/i459829.jpeg" alt="Delta">
+						</div>
+						<h3>Delta</h3>
+						<div class="social-links">
+						</div>
+						<p class="role">Project leader </p>
+					</div>
+				</section>
+
+				<section class="credits-section">
+					<h2><i class="fas fa-heart"></i> Co-Leaders</h2>
+					<div class="supporters-grid">
+						<div class="supporter-card">
+							<div class="profile-img">
+								<img src="Images/90ea5f9e95f18e2e3fa8a4dc2bca0a80.jpg" width="250px" height="250px"
+									alt="Uncrash">
+							</div>
+							<h3>Elbasedd</h3>
+							<p class="role">Coder Of CodHub.</p>
+							<div class="social-links">
+							</div>
+						</div>
+
+						<div class="supporter-card">
+							<div class="profile-img">
+								<img src="img/jhonathan.webp" width="250px" height="250px" alt="Uncrash">
+							</div>
+							<h3>Jhonatan</h3>
+							<p class="role">Co-Owner Of Codhub And designer.</p>
+							<div class="social-links">
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="credits-section">
+					<h2><i class="fas fa-heart"></i> Supporters</h2>
+					<div class="supporters-grid">
+						<div class="supporter-card">
+							<div class="profile-img">
+								<img src="img/uncrashv5.png" width="250px" height="250px" alt="Uncrash">
+							</div>
+							<h3>Uncrash</h3>
+							<p class="role">Error seeker and responsible for several ideas.</p>
+							<div class="social-links">
+							</div>
+						</div>
+						<div class="supporter-card">
+							<div class="profile-img">
+								<img src="img/jhonathan.webp" alt="Jhonatan">
+							</div>
+							<h3>Jhonatan</h3>
+							<p class="role">Project Contributor</p>
+						</div>
+						<div class="supporter-card">
+							<div class="profile-img">
+								<img src="img/joel.jpg" alt="Joel">
+							</div>
+							<h3>Joel</h3>
+							<p class="role">Project Contributor</p>
+						</div>
+						<div class="supporter-card">
+							<div class="profile-img">
+								<img src="img/blaster.webp" alt="Blaster">
+							</div>
+							<h3>Blaster</h3>
+							<p class="role">Error seeker.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="credits-section">
+					<h2><i class="fa-brands fa-discord"></i>Partners</h2>
+					<div class="supporters-grid">
+						<div class="supporter-card">
+							<div class="profile-img">
+								<img src="img/iw8-2.png" alt="Uncrash">
+							</div>
+							<h3>IW8-mod</h3>
+							<div class="social-links">
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Footer / Rodapé -->
+			<footer class="footer glass">
+				<p>Website made by delta. Thanks uncrash and Jhonatan for the ideas.</p>
+				<div class="version-info">
+					<span>Version: 1.8.0</span>
+					<span>||</span>
+					<span>Cortex Public Version Release</span>
+				</div>
+			</footer>
+		</main>
+	</div>
+
+	<script>
+		// Mouse tilt effect / Efeito de inclinação com mouse
+		document.querySelectorAll('.glass, .creator-card, .supporter-card').forEach(el => {
+			let isHovering = false;
+			let animationFrame = null;
+			let animationCompleted = false;
+
+			el.addEventListener('animationend', () => {
+				animationCompleted = true;
+			});
+
+			el.addEventListener('mouseenter', () => {
+				isHovering = true;
+				el.classList.add('hover-active');
+			});
+
+			el.addEventListener('mousemove', e => {
+				if (!isHovering) return;
+
+				if (animationFrame) {
+					cancelAnimationFrame(animationFrame);
+				}
+
+				animationFrame = requestAnimationFrame(() => {
+					const rect = el.getBoundingClientRect();
+					const x = e.clientX - rect.left;
+					const y = e.clientY - rect.top;
+					const centerX = rect.width / 2;
+					const centerY = rect.height / 2;
+
+					const xRatio = Math.max(-0.8, Math.min(0.8, (x - centerX) / centerX));
+					const yRatio = Math.max(-0.8, Math.min(0.8, (y - centerY) / centerY));
+
+					const rotateX = -yRatio * 3;
+					const rotateY = xRatio * 3;
+
+					el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+				});
+			});
+
+			el.addEventListener('mouseleave', () => {
+				isHovering = false;
+				if (animationFrame) {
+					cancelAnimationFrame(animationFrame);
+				}
+				el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+			});
+		});
+	</script>
+</body>
+
+</html>
