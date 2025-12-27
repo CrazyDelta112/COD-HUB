@@ -2,7 +2,7 @@
 const gameElements = document.querySelectorAll('[data-id="game"]');
 
 const hoverSound = new Audio('Sounds/IW8/hover3.wav');
-const clickSound = new Audio('Sounds/IW8/click.wav'); // som do clique
+const clickSound = new Audio('Sounds/IW8/iw8_blades_right_bo.wav'); // som do clique
 
 Array.from(gameElements).forEach((gameElement) => {
   gameElement.addEventListener('mouseover', () => {

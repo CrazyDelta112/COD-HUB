@@ -4,21 +4,21 @@
 /* CSS Variables / Variáveis CSS */
 :root {
     --glass-bg: rgba(40, 40, 40, 0.08);
-    --glass-border: rgba(100, 200, 100, 0.18);
+    --glass-border: rgba(75, 18, 18, 0.18);
     --glass-shadow: rgba(0, 0, 0, 0.3);
 
     --primary-bg: #1a1a1a;
-    --gradient-1: #0d2618;
-    --gradient-2: #1a2a1a;
-    --gradient-3: #0f2d0f;
+    --gradient-1: #a00808;
+    --gradient-2: #a73333;
+    --gradient-3: #441702;
 
     --text-primary: #e0e0e0;
     --text-secondary: rgba(200, 200, 200, 0.7);
     --text-tertiary: rgba(180, 180, 180, 0.5);
 
-    --accent-primary: #4CAF50;
-    --accent-green: #66BB6A;
-    --accent-green-bright: #81C784;
+    --accent-primary: #ff0000;
+    --accent-green: #ffffff;
+    --accent-green-bright: #ff6464bd;
 
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -89,7 +89,7 @@ body {
     object-fit: cover;
     opacity: 0.2;
     pointer-events: none;
-    z-index: -1;
+    z-index: -2;
 }
 
 /* Background Animations / Animações de Fundo */
@@ -135,7 +135,6 @@ a {
 
 .hero-section,
 .featured-links,
-.quote-section,
 .navbar,
 .footer {
     transform-style: preserve-3d;
@@ -219,12 +218,12 @@ footer.glass {
 }
 
 .navbar a.active {
-    background: rgba(76, 175, 80, 0.2);
+    background: rgba(175, 15, 15, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(76, 175, 80, 0.5);
+    border: 1px solid rgba(175, 76, 76, 0.5);
     color: var(--text-primary);
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+    box-shadow: 0 0 20px rgba(175, 76, 76, 0.4);
 }
 
 .content {
@@ -262,7 +261,7 @@ footer.glass {
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-lg);
     text-align: center;
-    background: linear-gradient(135deg, #66BB6A, #81C784);
+    background: linear-gradient(135deg, #bb6666, #c78181);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -279,7 +278,7 @@ footer.glass {
 
 .featured-links li {
     background: rgba(76, 175, 80, 0.02);
-    border: 1px solid rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(175, 76, 76, 0.2);
     border-radius: var(--radius-md);
     padding: var(--spacing-lg);
     transition: all var(--transition-normal);
@@ -287,10 +286,10 @@ footer.glass {
 }
 
 .featured-links li:hover {
-    background: rgba(76, 175, 80, 0.1);
-    border-color: rgba(76, 175, 80, 0.4);
+    background: rgba(175, 76, 76, 0.1);
+    border-color: rgba(175, 76, 76, 0.4);
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 8px 24px rgba(175, 76, 76, 0.3);
 }
 
 .featured-links li a {
@@ -298,21 +297,21 @@ footer.glass {
     font-size: 1.25rem;
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-xs);
-    background: linear-gradient(135deg, #66BB6A, #81C784);
+    background: linear-gradient(135deg, #bb6666, #c78181);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .featured-links li:nth-child(2) a {
-    background: linear-gradient(135deg, #66BB6A, #81C784);
+    background: linear-gradient(135deg, #bb6666, #c78181);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .featured-links li:nth-child(3) a {
-    background: linear-gradient(135deg, #66BB6A, #81C784);
+    background: linear-gradient(135deg, #bb6666, #c78181);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -322,29 +321,6 @@ footer.glass {
     color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.5;
-}
-
-/* Quote Section / Seção de Citação */
-.quote-section {
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--spacing-xl);
-    text-align: center;
-}
-
-#cod-quote {
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    font-weight: var(--font-weight-semibold);
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-md);
-    font-style: italic;
-    line-height: 1.4;
-}
-
-#cod-quote-meta {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    font-weight: var(--font-weight-medium);
 }
 
 /* Footer / Rodapé */
@@ -383,8 +359,7 @@ footer.glass {
 }
 
 .hero-section,
-.featured-links,
-.quote-section {
+.featured-links {
     animation: fadeIn 0.6s ease forwards;
     animation-fill-mode: forwards;
 }
@@ -393,13 +368,8 @@ footer.glass {
     animation-delay: 0.1s;
 }
 
-.quote-section {
-    animation-delay: 0.2s;
-}
-
 .hero-section.hover-active,
-.featured-links.hover-active,
-.quote-section.hover-active {
+.featured-links.hover-active {
     animation: none !important;
     opacity: 1 !important;
 }
@@ -567,7 +537,7 @@ footer.glass {
 .card {
     background: rgba(40, 40, 40, 0.3);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(100, 200, 100, 0.2);
+    border: 1px solid rgba(255, 0, 0, 0.2);
     border-radius: 8px;
     padding: 15px;
     transition: all 0.3s ease;
@@ -576,7 +546,7 @@ footer.glass {
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: rgba(100, 200, 100, 0.4);
+    border-color: rgba(200, 100, 100, 0.4);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -623,15 +593,15 @@ footer.glass {
     background: rgba(40, 40, 40, 0.25);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(100, 200, 100, 0.25);
+    border: 1px solid rgba(200, 100, 100, 0.25);
     color: var(--text-primary);
 }
 
 .versions a:hover {
-    background: rgba(76, 175, 80, 0.15);
-    border-color: rgba(100, 200, 100, 0.5);
+    background: rgba(175, 76, 76, 0.15);
+    border-color: rgba(200, 100, 100, 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 15px rgba(175, 76, 76, 0.3);
 }
 
 /* All version classes use the same acrylic style / Todas as classes de versão usam o mesmo estilo acrílico */
@@ -646,7 +616,7 @@ footer.glass {
     background: rgba(40, 40, 40, 0.25);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(100, 200, 100, 0.25);
+    border: 1px solid rgba(200, 100, 100, 0.25);
     color: var(--text-primary);
 }
 
@@ -658,10 +628,10 @@ footer.glass {
 .version-mwiii:hover,
 .version-h2:hover,
 .version-hot:hover {
-    background: rgba(76, 175, 80, 0.15);
-    border-color: rgba(100, 200, 100, 0.5);
+    background: rgba(175, 76, 76, 0.15);
+    border-color: rgba(200, 100, 100, 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 15px rgba(175, 76, 76, 0.3);
 }
 
 /* Unavailable/Coming Soon - Dimmed acrylic / Indisponível/Em Breve - Acrílico esmaecido */

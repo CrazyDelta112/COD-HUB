@@ -18,7 +18,7 @@
 
     function getRandomImages() {
         try {
-            const stored = localStorage.getItem('codhub_bg_images_v2');
+            const stored = localStorage.getItem('codhub_bg_images_v3');
             if (stored) {
                 const parsed = JSON.parse(stored);
                 if (Array.isArray(parsed) && parsed.length === 3) {
@@ -35,7 +35,7 @@
 
         try {
             // Store for consistency across pages / Armazena para consistência entre páginas
-            localStorage.setItem('codhub_bg_images_v2', JSON.stringify(selected));
+            localStorage.setItem('codhub_bg_images_v3', JSON.stringify(selected));
         } catch (e) {
             console.warn('Could not save to localStorage:', e);
         }
@@ -60,6 +60,8 @@
                     console.log('Image loaded successfully:', src);
                     element.src = src;
                     element.style.display = 'block';
+                    element.style.opacity = '0.3'; // Enforce opacity
+                    element.style.zIndex = '-1';   // Enforce z-index
                 };
                 tempImage.onerror = function () {
                     console.error('Failed to load image:', src);
@@ -84,7 +86,7 @@
 
     window.refreshBackgroundImages = function () {
         try {
-            localStorage.removeItem('codhub_bg_images_v2');
+            localStorage.removeItem('codhub_bg_images_v3');
             location.reload();
         } catch (e) {
             console.error('Error refreshing background images:', e);

@@ -3,18 +3,20 @@
 /* CSS Variables / Variáveis CSS */
 :root {
     --glass-bg: rgba(40, 40, 40, 0.08);
-    --glass-border: rgba(100, 200, 100, 0.18);
+    --glass-border: rgba(221, 18, 18, 0.18);
     --glass-shadow: rgba(0, 0, 0, 0.3);
     --primary-bg: #1a1a1a;
-    --gradient-1: #0d2618;
-    --gradient-2: #1a2a1a;
-    --gradient-3: #0f2d0f;
+    --gradient-1: #a00808;
+    --gradient-2: #a73333;
+    --gradient-3: #441702;
+
     --text-primary: #e0e0e0;
     --text-secondary: rgba(200, 200, 200, 0.7);
     --text-tertiary: rgba(180, 180, 180, 0.5);
-    --accent-primary: #4CAF50;
-    --accent-green: #66BB6A;
-    --accent-green-bright: #81C784;
+
+    --accent-primary: #ff0000;
+    --accent-green: #ffffff;
+    --accent-green-bright: #ff6464bd;
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 0.75rem;
@@ -77,7 +79,7 @@ body {
     object-fit: cover;
     opacity: 0.2;
     pointer-events: none;
-    z-index: 0
+    z-index: -2
 }
 
 .bg-left {
@@ -86,7 +88,7 @@ body {
     left: 10%;
     height: 100%;
     width: auto;
-    width: auto;
+
     object-fit: cover;
     opacity: 0.3;
     pointer-events: none;
@@ -234,12 +236,12 @@ footer.glass {
 }
 
 .navbar a.active {
-    background: rgba(76, 175, 80, 0.2);
+    background: rgba(175, 76, 76, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(76, 175, 80, 0.5);
+    border: 1px solid rgba(175, 76, 76, 0.5);
     color: var(--text-primary);
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4)
+    box-shadow: 0 0 20px rgba(175, 76, 76, 0.4)
 }
 
 .content {
@@ -255,10 +257,10 @@ footer.glass {
 }
 
 .hero-logo {
-    width: 200px;
+    width: 400px;
     height: auto;
     margin: 0 auto var(--spacing-lg);
-    filter: drop-shadow(0 4px 12px rgba(76, 175, 80, 0.4));
+    filter: drop-shadow(0 4px 12px rgba(175, 76, 76, 0.4));
     animation: logoFloat 3s ease-in-out infinite;
 }
 
@@ -305,7 +307,7 @@ footer.glass {
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-lg);
     text-align: center;
-    background: linear-gradient(135deg, #66BB6A, #81C784);
+    background: linear-gradient(135deg, #ff0000, #ff0000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text
@@ -322,7 +324,7 @@ footer.glass {
 
 .featured-links li {
     background: rgba(76, 175, 80, 0.02);
-    border: 1px solid rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(175, 76, 76, 0.2);
     border-radius: var(--radius-md);
     padding: var(--spacing-lg);
     transition: all var(--transition-normal);
@@ -330,10 +332,10 @@ footer.glass {
 }
 
 .featured-links li:hover {
-    background: rgba(76, 175, 80, 0.1);
-    border-color: rgba(76, 175, 80, 0.4);
+    background: rgba(175, 76, 76, 0.1);
+    border-color: rgba(175, 76, 76, 0.4);
     transform: translatey(-4px);
-    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3)
+    box-shadow: 0 8px 24px rgba(175, 76, 76, 0.3)
 }
 
 .featured-links li a {
@@ -341,21 +343,21 @@ footer.glass {
     font-size: 1.25rem;
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-xs);
-    background: linear-gradient(135deg, #66BB6A, #81C784);
+    background: linear-gradient(135deg, #bb6666, #c78181);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text
 }
 
 .featured-links li:nth-child(2) a {
-    background: linear-gradient(135deg, #66BB6A, #81C784);
+    background: linear-gradient(135deg, #bb6666, #c78181);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text
 }
 
 .featured-links li:nth-child(3) a {
-    background: linear-gradient(135deg, #66BB6A, #81C784);
+    background: linear-gradient(135deg, #bb6666, #c78181);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text
